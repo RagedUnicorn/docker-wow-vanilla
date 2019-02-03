@@ -1,0 +1,26 @@
+# git
+.git
+.gitignore
+.gitattributes
+
+# documentation
+MIT.LICENSE
+README.md
+RELEASE.md
+
+# docker-compose
+docker-compose.yml
+docker-compose.dev.yml
+docker-compose.stack.yml
+docker-compose.test.yml
+.env
+
+# misc
+dockery/
+test/
+
+# data that is added as local volume
+data/dbc/
+data/maps/
+data/mmaps/
+data/vmaps/

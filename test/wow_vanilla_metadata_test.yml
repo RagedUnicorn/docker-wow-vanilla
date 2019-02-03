@@ -1,0 +1,18 @@
+schemaVersion: 2.0.0
+
+metadataTest:
+  env:
+    - key: 'WOW_USER'
+      value: 'wow'
+    - key: 'WOW_GROUP'
+      value: 'wow'
+    - key: 'WOW_INSTALL'
+      value: '/opt/classic'
+    - key: 'WOW_HOME'
+      value: '/home/wow'
+  labels:
+    - key: 'com.ragedunicorn.maintainer'
+      value: 'Michael Wiesendanger <michael.wiesendanger@gmail.com>'
+  exposedPorts: ["8085", "3724"]
+  volumes: ["/var/log/wow"]
+  entrypoint: ["/docker-entrypoint.sh"]

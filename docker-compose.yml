@@ -1,0 +1,51 @@
+version: '3.6'
+services:
+  wow-vanilla-database:
+    image: ragedunicorn/mysql:${MYSQL_TAG_VERSION}-stable
+    environment:
+      - MYSQL_APP_USER=app
+      - MYSQL_APP_PASSWORD=app
+    volumes:
+      - wow_vanilla_mysql_data:/var/lib/mysql
+    expose:
+        - "3306"
+    healthcheck:
+      test: ["CMD", "/docker-healthcheck.sh"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 1m
+    labels:
+      com.ragedunicorn.mysql.environment: "prod"
+      com.ragedunicorn.mysql.description: "MySQL"
+  wow-vanilla-server:
+    build: .
+    image: ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-stable
+    environment:
+      - MYSQL_APP_USER=app
+      - MYSQL_APP_PASSWORD=app
+      - DATABASE_HOSTNAME=wow-vanilla-database
+    volumes:
+      - wow_vanilla_log_data:/var/log/wow
+      - "${PWD}/config/mangosd.conf.tpl:/opt/classic/etc/mangosd.conf.tpl"
+      - "${PWD}/config/realmd.conf.tpl:/opt/classic/etc/realmd.conf.tpl"
+      - "${PWD}/data:/opt/classic/data"
+    ports:
+      - "8085:8085"
+      - "3724:3724"
+    depends_on:
+      - wow-vanilla-database
+    stdin_open: true
+    tty: true
+    healthcheck:
+      test: ["CMD", "/docker-healthcheck.sh"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 1m
+    labels:
+      com.ragedunicorn.wow-vanilla.environment: "prod"
+      com.ragedunicorn.wow-vanilla.description: "World of Warcraft Vanilla Server"
+volumes:
+  wow_vanilla_mysql_data: {}
+  wow_vanilla_log_data: {}

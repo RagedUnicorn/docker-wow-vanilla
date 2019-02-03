@@ -1,0 +1,110 @@
+version: '3.6'
+services:
+  container-test:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-stable", "--config", "/test/wow_vanilla_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-metadata:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-stable", "--config", "/test/wow_vanilla_metadata_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-dbc:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-stable", "--config", "/test/wow_vanilla_dbc_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-maps:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-stable", "--config", "/test/wow_vanilla_maps_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-mmaps:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-stable", "--config", "/test/wow_vanilla_mmaps_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-vmaps:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-stable", "--config", "/test/wow_vanilla_vmaps_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-dev:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-dev", "--config", "/test/wow_vanilla_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-metadata-dev:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-dev", "--config", "/test/wow_vanilla_metadata_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-dbc-dev:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-dev", "--config", "/test/wow_vanilla_dbc_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-maps-dev:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-dev", "--config", "/test/wow_vanilla_maps_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-mmaps-dev:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-dev", "--config", "/test/wow_vanilla_mmaps_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
+  container-test-vmaps-dev:
+    image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
+    volumes:
+        - ./test/:/test
+        - /var/run/docker.sock:/var/run/docker.sock
+    command: ["--image", "ragedunicorn/wow-vanilla:${WOW_VANILLA_TAG_VERSION}-dev", "--config", "/test/wow_vanilla_vmaps_test.yml"]
+    labels:
+      com.ragedunicorn.container-test.environment: "test"
+      com.ragedunicorn.container-test.description: "Google Container Structure Test"
