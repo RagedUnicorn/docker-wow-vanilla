@@ -190,8 +190,6 @@ This will generate a `dbc` and a `maps` folder in the chosen output path.
 
 #### Generate vmaps base
 
-Generate Buildings
-
 Make sure that certain mpq files are all lowercase because the vmapextractor cannot handle those if their extension is uppercase
 
 ```bash
@@ -202,17 +200,21 @@ mv Data/wmo.MQP Data/wmo.mpq
 mv Data/base.MQP Data/base.mpq
 ```
 
-`/opt/classic/bin/vmapextractor -d /home/wow/wow-vanilla-client_lights_hope/Data`
+```bash
+# extract vmaps
+/opt/classic/bin/vmapextractor -d /home/wow/wow-vanilla-client_lights_hope/Data
+# create assemble directory
+mkdir /home/wow/wow-vanilla-client_lights_hope/vmaps
+# assemble vmaps
+/opt/classic/bin/vmap_assembler /home/wow/wow-vanilla-client_lights_hope/Buildings/ /home/wow/wow-vanilla-client_lights_hope/vmaps/
+```
 
-`mkdir /home/wow/wow-vanilla-client_lights_hope/vmaps`
+#### Generate mmaps
 
-`/opt/classic/bin/vmap_assembler /home/wow/wow-vanilla-client_lights_hope/Buildings/ /home/wow/wow-vanilla-client_lights_hope/vmaps/`
-
-#### Generate vmaps
-
-`mkdir /home/wow/wow-vanilla-client_lights_hope/mmaps`
-
-`/opt/classic/bin/MoveMapGen`
+```bash
+mkdir /home/wow/wow-vanilla-client_lights_hope/mmaps
+/opt/classic/bin/MoveMapGen
+```
 
 *Note:* This will take a long time to generate
 
