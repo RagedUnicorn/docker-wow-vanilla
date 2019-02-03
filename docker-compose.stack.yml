@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   wow-vanilla-database:
-    image: ragedunicorn/mysql:1.0.3-stable
+    image: ragedunicorn/mysql:1.0.4-stable
     volumes:
       - wow_vanilla_mysql_data:/var/lib/mysql
     secrets:
