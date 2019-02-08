@@ -240,6 +240,28 @@ https://github.com/brotalnia/database
 
 The server service keeps `stdin_open` open and allocates a pseudo `tty` for the server process startup successfully. The reason for this is that the server process provides a cli for sending commands to the server. If this cli cannot be started the whole process fails. Not allocation a `tty` and keeping `stdin_open` prevents the process from launching that cli.
 
+## Test
+
+To do basic tests of the structure of the container use the `docker-compose.test.yml` file.
+
+`docker-compose -f docker-compose.test.yml up`
+
+For more info see [container-test](https://github.com/RagedUnicorn/docker-container-test).
+
+Tests can also be run by category such as command and metadata tests by starting single services in `docker-compose.test.yml`
+
+```
+# metadata tests
+docker-compose -f docker-compose.test.yml up container-test-metadata
+```
+
+The same tests are also available for the development image.
+
+```
+# metadata tests
+docker-compose -f docker-compose.test.yml up container-dev-test-metadata
+```
+
 ## Links
 
 Ubuntu packages database
