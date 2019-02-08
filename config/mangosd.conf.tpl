@@ -67,7 +67,7 @@ ConfVersion=2010100901
 ###################################################################################################################
 
 RealmID = 1
-DataDir = "/opt/classic/data"
+DataDir = "/opt/vanilla/data"
 LogsDir = ""
 LoginDatabase.Info              = "${database_hostname};3306;${wow_database_user};${wow_database_user_password};realmd"
 LoginDatabase.Connections       = 1

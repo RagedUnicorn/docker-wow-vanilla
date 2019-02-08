@@ -10,27 +10,27 @@ fileExistenceTests:
   shouldExist: true
   permissions: '-rwxr-xr-x'
 - name: 'wow_bin'
-  path: '/opt/classic/bin'
+  path: '/opt/vanilla/bin'
   shouldExist: true
   permissions: 'drwxr-xr-x'
 - name: 'wow_etc'
-  path: '/opt/classic/etc'
+  path: '/opt/vanilla/etc'
   shouldExist: true
   permissions: 'drwxr-xr-x'
 - name: 'wow_mangosd_conf'
-  path: '/opt/classic/etc/mangosd.conf.tpl'
+  path: '/opt/vanilla/etc/mangosd.conf.tpl'
   shouldExist: true
   permissions: '-rwxr-xr-x'
 - name: 'wow_realmd_conf'
-  path: '/opt/classic/etc/realmd.conf.tpl'
+  path: '/opt/vanilla/etc/realmd.conf.tpl'
   shouldExist: true
   permissions: '-rwxr-xr-x'
 - name: 'wow_realmd_binary'
-  path: '/opt/classic/bin/realmd'
+  path: '/opt/vanilla/bin/realmd'
   shouldExist: true
   permissions: '-rwxr-xr-x'
 - name: 'wow_mangosd_binary'
-  path: '/opt/classic/bin/mangosd'
+  path: '/opt/vanilla/bin/mangosd'
   shouldExist: true
   permissions: '-rwxr-xr-x'
 - name: 'wow_init_sql'
@@ -38,7 +38,7 @@ fileExistenceTests:
   shouldExist: true
   permissions: '-rwxrwxrwx'
 - name: 'wow_init_realm_sql'
-  path: '/opt/classic/etc/init_realm.tpl'
+  path: '/opt/vanilla/etc/init_realm.tpl'
   shouldExist: true
   permissions: '-rwxr-xr-x'
 - name: 'wow_world_full_sql'

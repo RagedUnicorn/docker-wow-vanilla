@@ -41,7 +41,7 @@ ENV \
 # image args
 ARG WOW_USER=wow
 ARG WOW_GROUP=wow
-ARG WOW_INSTALL=/opt/classic
+ARG WOW_INSTALL=/opt/vanilla
 ARG WOW_HOME=/home/wow
 # build extractory for extracting client data
 # 0 - false, 1 - true

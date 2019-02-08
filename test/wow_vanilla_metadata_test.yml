@@ -7,7 +7,7 @@ metadataTest:
     - key: 'WOW_GROUP'
       value: 'wow'
     - key: 'WOW_INSTALL'
-      value: '/opt/classic'
+      value: '/opt/vanilla'
     - key: 'WOW_HOME'
       value: '/home/wow'
   labels:

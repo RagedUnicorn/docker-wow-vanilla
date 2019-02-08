@@ -129,11 +129,11 @@ By default a realm with the name `raged_unicorn` will be created. This can be mo
 
 ### realmd.conf
 
-Configuration for realm is located in `config/realmd.conf.tpl` and copied into the image `opt/classic/etc`
+Configuration for realm is located in `config/realmd.conf.tpl` and copied into the image `opt/vanilla/etc`
 
 ### mangosd.conf
 
-Configuration for world server is located in `config/mangosd.conf.tpl` and copied into the image `opt/classic/etc`
+Configuration for world server is located in `config/mangosd.conf.tpl` and copied into the image `opt/vanilla/etc`
 
 During the startup of the server the templates are rendered and the final configuration is created. This step is repeated each time the `docker-entrypoint.sh` script is executed. It is important that all modifications are done in the templates itself and not the generated configuration. Those will be overwritten.
 
@@ -143,8 +143,8 @@ In this example the same configurations that are copied into the image are mount
 
 ```
 volumes:
-  - ${PWD}/config/mangosd.conf.tpl:/opt/classic/etc/mangosd.conf.tpl
-  - ${PWD}/config/realmd.conf.tpl:/opt/classic/etc/realmd.conf.tpl
+  - ${PWD}/config/mangosd.conf.tpl:/opt/vanilla/etc/mangosd.conf.tpl
+  - ${PWD}/config/realmd.conf.tpl:/opt/vanilla/etc/realmd.conf.tpl
 ```
 
 #### Patch Level
@@ -176,7 +176,7 @@ When building the server from source make sure to include the extractors. This c
   make install
 ```
 
-This will create the required extractors during the compilation of the server. With make install the binaries are copied to `/opt/classic/bin`. For extracting the data a WoW installation is required. It does not matter in this case whether that installation is for Mac or Windows.
+This will create the required extractors during the compilation of the server. With make install the binaries are copied to `/opt/vanilla/bin`. For extracting the data a WoW installation is required. It does not matter in this case whether that installation is for Mac or Windows.
 
 Copy wow client to running docker container. WoW client is not contained in this repository.
 
@@ -184,7 +184,7 @@ Copy wow client to running docker container. WoW client is not contained in this
 
 #### Generate maps and dbc
 
-`/opt/classic/bin/mapextractor -i /home/wow/wow-vanilla-client_lights_hope -o /home/wow/wow-vanilla-client_lights_hope/`
+`/opt/vanilla/bin/mapextractor -i /home/wow/wow-vanilla-client_lights_hope -o /home/wow/wow-vanilla-client_lights_hope/`
 
 This will generate a `dbc` and a `maps` folder in the chosen output path.
 
@@ -202,18 +202,18 @@ mv Data/base.MQP Data/base.mpq
 
 ```bash
 # extract vmaps
-/opt/classic/bin/vmapextractor -d /home/wow/wow-vanilla-client_lights_hope/Data
+/opt/vanilla/bin/vmapextractor -d /home/wow/wow-vanilla-client_lights_hope/Data
 # create assemble directory
 mkdir /home/wow/wow-vanilla-client_lights_hope/vmaps
 # assemble vmaps
-/opt/classic/bin/vmap_assembler /home/wow/wow-vanilla-client_lights_hope/Buildings/ /home/wow/wow-vanilla-client_lights_hope/vmaps/
+/opt/vanilla/bin/vmap_assembler /home/wow/wow-vanilla-client_lights_hope/Buildings/ /home/wow/wow-vanilla-client_lights_hope/vmaps/
 ```
 
 #### Generate mmaps
 
 ```bash
 mkdir /home/wow/wow-vanilla-client_lights_hope/mmaps
-/opt/classic/bin/MoveMapGen
+/opt/vanilla/bin/MoveMapGen
 ```
 
 *Note:* This will take a long time to generate
