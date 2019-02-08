@@ -18,7 +18,7 @@ services:
     labels:
       com.ragedunicorn.container-test.environment: "test"
       com.ragedunicorn.container-test.description: "Google Container Structure Test"
-  container-test-dev:
+  container-dev-test:
     image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
     volumes:
         - ./test/:/test
@@ -27,7 +27,7 @@ services:
     labels:
       com.ragedunicorn.container-test.environment: "test"
       com.ragedunicorn.container-test.description: "Google Container Structure Test"
-  container-test-metadata-dev:
+  container-dev-test-metadata:
     image: ragedunicorn/container-test:${CONTAINER_STRUCTURE_TEST_VERSION}-stable
     volumes:
         - ./test/:/test
