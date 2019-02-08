@@ -248,7 +248,7 @@ To do basic tests of the structure of the container use the `docker-compose.test
 
 For more info see [container-test](https://github.com/RagedUnicorn/docker-container-test).
 
-Tests can also be run by category such as command and metadata tests by starting single services in `docker-compose.test.yml`
+Tests can also be run by category such as metadata tests by starting single services in `docker-compose.test.yml`
 
 ```
 # metadata tests
