@@ -238,7 +238,7 @@ https://github.com/brotalnia/database
 
 #### Misc
 
-The server service keeps `stdin_open` open and allocates a pseudo `tty` for the server process startup successfully. The reason for this is that the server process provides a cli for sending commands to the server. If this cli cannot be started the whole process fails. Not allocation a `tty` and keeping `stdin_open` prevents the process from launching that cli.
+The server service keeps `stdin_open` open and allocates a pseudo `tty` for the server process startup successfully. The reason for this is that the server process provides a cli for sending commands to the server. If this cli cannot be started the whole process fails. Not allocating a `tty` and keeping `stdin_open` prevents the process from launching that cli.
 
 ## Test
 
