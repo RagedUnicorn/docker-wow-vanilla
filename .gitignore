@@ -26,6 +26,7 @@ Icon
 Thumbs.db
 
 # Data files
-data/
+data/server/*
+data/sql/*
 !server.tar.gz
 !data.tar.gz
