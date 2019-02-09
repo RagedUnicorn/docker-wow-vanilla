@@ -120,9 +120,14 @@ RUN mkdir "${WOW_INSTALL}" \
   && chown "${WOW_USER}":"${WOW_GROUP}" "${WOW_INSTALL}"
 
 # build server
-COPY data/server "${WOW_HOME}"/server/
+COPY data/server/server.tar.gz "${WOW_HOME}"/
+RUN mkdir -p "${WOW_HOME}"/server/build
 
-RUN mkdir "${WOW_HOME}"/server/build
+RUN \
+  set -ex && \
+  tar xvzf "${WOW_HOME}"/server.tar.gz -C "${WOW_HOME}"/server && \
+  rm -rf "${WOW_HOME}"/server.tar.gz
+
 WORKDIR "${WOW_HOME}"/server/build
 
 RUN \
@@ -134,8 +139,8 @@ COPY data/sql "${WOW_HOME}"/
 
 RUN \
   set -ex && \
-  tar xvzf "${WOW_HOME}"/*.tar.gz -C "${WOW_HOME}" && \
-  rm -rf "${WOW_HOME}"/*.tar.gz
+  tar xvzf "${WOW_HOME}"/data.tar.gz -C "${WOW_HOME}" && \
+  rm -rf "${WOW_HOME}"/data.tar.gz
 
 WORKDIR "${WOW_INSTALL}"/data
 
