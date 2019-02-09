@@ -6,6 +6,8 @@ This image is intended to build a base for running a WoW Vanilla Server based on
 
 Its intent is to provide a WoW Server for experimenting and developing WoW Addons.
 
+![](/doc/vanilla_logo.png)
+
 ## Using the image
 
 #### Start container
