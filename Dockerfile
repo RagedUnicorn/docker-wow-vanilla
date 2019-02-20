@@ -142,8 +142,6 @@ RUN \
   tar xvzf "${WOW_HOME}"/data.tar.gz -C "${WOW_HOME}" && \
   rm -rf "${WOW_HOME}"/data.tar.gz
 
-WORKDIR "${WOW_INSTALL}"/data
-
 COPY config/mangosd.conf.tpl config/realmd.conf.tpl config/init_realm.tpl "${WOW_INSTALL}/etc/"
 
 WORKDIR /
