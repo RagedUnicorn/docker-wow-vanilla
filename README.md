@@ -220,13 +220,28 @@ mkdir /home/wow/wow-vanilla-client_lights_hope/mmaps
 
 *Note:* This will take a long time to generate
 
-#### Package the Resources
+#### Add the Generated Data to the Docker Image
+
+Once all of the files are generated make sure to pull them from the image to save them for later.
 
 Extract the data from the image with `docker cp`
 
-`docker cp <containerId>:/[data-file] [host-path]`
+```
+docker cp <containerId>:/[data-file] [host-path]
+```
 
-Most of the data inside `data` is packaged into tar.gz files and for some even split into multiple files. This is not a requirement itself but was done to work around the 100MB file limit of github and to stay below 1GB for the complete allowed size of the repository. When regenerating the data files make sure to update this as well.
+The data has to be placed inside the data folder in the following way
+
+```
+data/dbc
+data/maps
+data/mmaps
+data/vmaps
+```
+
+All resources will be added as a local docker volume to the container once its up and running.
+
+**Note:** The image expects the data to be fully unpacked. If you packaged your resources in any way make sure to unpack them.
 
 #### Source
 
