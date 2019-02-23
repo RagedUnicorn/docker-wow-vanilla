@@ -279,6 +279,12 @@ The same tests are also available for the development image.
 docker-compose -f docker-compose.test.yml up container-dev-test-metadata
 ```
 
+## Know Issues
+
+#### Data Folder is Empty Inside Running Container
+
+If the data folder inside the running container is empty even though the client data is place correctly there might be an issue with sharing the folder itself. For Windows see [Volume-Sharing](./docs/VOLUME_SHARING.md) for an example on how volumes can be shared if this is blocked by a Firewall.
+
 ## Links
 
 Ubuntu packages database
