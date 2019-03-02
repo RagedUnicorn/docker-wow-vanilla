@@ -26,6 +26,10 @@ Icon
 Thumbs.db
 
 # Data files
+data/maps/*
+data/mmaps/*
+data/vmaps/*
+data/dbc/*
 data/server/*
 data/sql/*
 !server.tar.gz
