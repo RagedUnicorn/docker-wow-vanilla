@@ -26,9 +26,9 @@ services:
       - DATABASE_HOSTNAME=wow-vanilla-database
     volumes:
       - wow_vanilla_log_data:/var/log/wow
-      - "${PWD}/config/mangosd.conf.tpl:/opt/vanilla/etc/mangosd.conf.tpl"
-      - "${PWD}/config/realmd.conf.tpl:/opt/vanilla/etc/realmd.conf.tpl"
-      - "${PWD}/data:/opt/vanilla/data"
+      - ./config/mangosd.conf.tpl:/opt/vanilla/etc/mangosd.conf.tpl
+      - ./config/realmd.conf.tpl:/opt/vanilla/etc/realmd.conf.tpl
+      - ./data:/opt/vanilla/data
     ports:
       - "8085:8085"
       - "3724:3724"
