@@ -15,7 +15,7 @@ services:
     tty: true
     entrypoint: /bin/bash
     labels:
-      com.ragedunicorn.mysql.environment: "prod"
+      com.ragedunicorn.mysql.environment: "dev"
       com.ragedunicorn.mysql.description: "MySQL"
   wow-vanilla-server:
     build: .
