@@ -29,7 +29,10 @@ services:
       - wow_vanilla_log_data:/var/log/wow
       - ./config/mangosd.conf.tpl:/opt/vanilla/etc/mangosd.conf.tpl
       - ./config/realmd.conf.tpl:/opt/vanilla/etc/realmd.conf.tpl
-      - ./data:/opt/vanilla/data"
+      - ./data/dbc:/opt/vanilla/data/dbc
+      - ./data/maps:/opt/vanilla/data/maps
+      - ./data/mmaps:/opt/vanilla/data/mmaps
+      - ./data/vmaps:/opt/vanilla/data/vmaps
     ports:
       - "8085:8085"
       - "3724:3724"
