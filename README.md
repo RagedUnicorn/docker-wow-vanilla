@@ -285,6 +285,25 @@ docker-compose -f docker-compose.test.yml up container-dev-test-metadata
 
 If the data folder inside the running container is empty even though the client data is place correctly there might be an issue with sharing the folder itself. For Windows see [Volume-Sharing](./doc/VOLUME_SHARING.md) for an example on how volumes can be shared if this is blocked by a Firewall.
 
+## Tips and Tricks
+
+#### Join a Battleground
+
+By default a certain amount of players is needed on both faction sides for a battleground to open. To lower the amount of players required the `battleground_template` needs to be modified.
+
+```sql
+USE mangos;
+UPDATE battleground_template SET battleground_template.MinPlayersPerTeam = 1 WHERE battleground_template.id = [battlegroundId];
+```
+
+Battleground ids are as follows:
+
+* Alterac Valley - 1
+* Warsong Gulch - 2
+* Arathi Basin - 3
+
+**Note:** Make sure to restart the server for the change to take effect
+
 ## Links
 
 Ubuntu packages database
