@@ -10,7 +10,7 @@ LABEL com.ragedunicorn.maintainer="Michael Wiesendanger <michael.wiesendanger@gm
 
 # software versions
 ENV \
-  WGET_VERSION=1.19.4-1ubuntu2.1 \
+  WGET_VERSION=1.19.4-1ubuntu2.2 \
   CA_CERTIFICATES_VERSION=20180409 \
   DIRMNGR_VERSION=2.2.4-1ubuntu1.2 \
   GOSU_VERSION=1.10 \
