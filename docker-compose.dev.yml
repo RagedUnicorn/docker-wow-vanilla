@@ -1,4 +1,4 @@
-version: '3.6'
+version: '3.7'
 services:
   wow-vanilla-database:
     image: ragedunicorn/mysql:${MYSQL_TAG_VERSION}-dev
